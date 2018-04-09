@@ -28,5 +28,7 @@ namespace RobotPanda
         {
             Console.WriteLine("Hi!");
         }
+
+        public string Food { get; set; } = "Chips";
     }
 }

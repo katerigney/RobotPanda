@@ -17,11 +17,13 @@ namespace RobotPanda
         public void FallAsleep(string name)
         {
             IsAsleep = true;
-            Console.WriteLine($"Shhh! Sleep Tight....");
+            Console.WriteLine($"Shhh! Sleep Tight, {name}....");
         }
-        public void EatUp(string who, string food)
+
+
+        public void EatUp(string who)
         {
-            Console.WriteLine($"{who} is eating {food}.");
+            Console.WriteLine($"{who} is eating.");
         } 
     }
 }

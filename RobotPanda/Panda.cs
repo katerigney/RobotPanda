@@ -8,8 +8,8 @@ namespace RobotPanda
 {
     class Panda : Animal, ISayHello, IPet
     {
-        public string Name { get; set; }
-        public string OwnersName { get; set; }
+        public string Food { get; set; } = "Bamboo";
+
 
         public void pet(string name)
         {

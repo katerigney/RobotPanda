@@ -10,6 +10,7 @@ namespace RobotPanda
     {
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
+
         public string Greeting { get; set; }
 
         protected bool IsAsleep { get; set; } = true;

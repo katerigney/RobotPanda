@@ -8,6 +8,9 @@ namespace RobotPanda
 {
     class Robot : Being, ISayHello
     {
+        public int VersionNumber { get; set; }
+
+
         public string Name { get; set; }
         public string OwnersName { get; set; }
 
