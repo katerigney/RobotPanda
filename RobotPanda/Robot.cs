@@ -10,23 +10,27 @@ namespace RobotPanda
     {
         public int VersionNumber { get; set; }
 
-
-        public string Name { get; set; }
-        public string OwnersName { get; set; }
-
-        public Robot()
+        public void StartUp(string name)
         {
-
-            //version number
-
-            //start up
-
-            //shut down
+            IsAsleep = false;
+            Console.WriteLine($"{name} powering up.");
         }
+
+        public void PowerDown (string name)
+        {
+            IsAsleep = true;
+            Console.WriteLine($"{name} powering down.");
+        }
+
 
         public void SayHello()
         {
             Console.WriteLine("Greetings!");
+        }
+
+        public override string ToString()
+        {
+            return $"Greetings! I am {Name} and I'm a robot. My birthday is {Birthday} ";
         }
 
     }

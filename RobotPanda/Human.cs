@@ -9,18 +9,23 @@ namespace RobotPanda
     class Human : Animal, ISayHello
     {
 
-        public string AdoptPet(string type)
+        public Panda AdoptPanda(string name, string ownersName)
         {
-            Console.WriteLine($"What do you want to name your {type}?");
-            var newName = Console.ReadLine();
-            if (type == "panda")
-            {
-                var newPanda = new Panda();
-                newPanda.pet();
-            }
+            var newPanda = new Panda();
+            newPanda.Name = name;
+            newPanda.Ownersname = ownersName;
+            newPanda.Birthday = DateTime.Today;
+            return newPanda;
 
-            return newPetName;
+        }
 
+        public Robot AdoptRobot(string name, string ownersName)
+        {
+            var newRobot = new Robot();
+            newRobot.Name = name;
+            newRobot.Ownersname = ownersName;
+            newRobot.Birthday = DateTime.Today;
+            return newRobot;
 
         }
 
@@ -29,6 +34,10 @@ namespace RobotPanda
             Console.WriteLine("Hi!");
         }
 
-        public string Food { get; set; } = "Chips";
+        public override string ToString()
+        {
+            return $"Hi! I am {Name} and I'm a person. My birthday is {Birthday}.";
+        }
+
     }
 }

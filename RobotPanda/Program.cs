@@ -35,13 +35,28 @@ namespace RobotPanda
 
             //robot: version number
             R2D2.VersionNumber = 1;
-            Console.WriteLine($"{R2D2.VersionNumber}");
+            Console.WriteLine($"R2D2 is version {R2D2.VersionNumber}.");
 
+            //robot: powering up and down
+            R2D2.PowerDown(R2D2.Name);
+            R2D2.StartUp(R2D2.Name);
+
+
+            //animals:eat, sleep, wakeup
             var animals = new List<Animal>();
             animals.Add(kate);
             animals.Add(Allan);
+            var animalsDoStuff = new Animal();
 
+            foreach (var animal in animals)
+            {
+                animalsDoStuff.EatUp(animal.Name);
+                animalsDoStuff.Wakeup(animal.Name);
+                animalsDoStuff.FallAsleep(animal.Name);
 
+            }
+
+            //beings - interface: greeting
             var greetings = new List<ISayHello>();
             greetings.Add(new Panda());
             greetings.Add(new Robot());
@@ -52,36 +67,38 @@ namespace RobotPanda
                 being.SayHello();
             }
 
+            //human adopts pets
 
-            var newAnimal = new Animal();
-            newAnimal.Wakeup(kate.Name);
-
-            Console.WriteLine("What would you like to eat for breakfast?");
-            var food = Console.ReadLine();
-            newAnimal.EatUp(newPerson.Name, food);
-
-            Console.WriteLine("Let's get you pet! Do you want a (panda) or a (robot)?");
-            var newAdoptionType = Console.ReadLine();
-
-            var newPet = newPerson.AdoptPet(newAdoptionType);
+            Panda jackie = kate.AdoptPanda("Jackie", kate.Name);
+            Robot C3PO = kate.AdoptRobot("C3PO", kate.Name);
 
             var Pets = new List<Being>();
+            Pets.Add(jackie);
+            Pets.Add(C3PO);
 
+            foreach (var pet in Pets)
+            {
+                //Ownersname would not work with being as the list type. Could make Pets class but can't put two inheritances on a class???
+                Console.WriteLine($"{pet.Name} is {pet.Ownersname}'s new pet.");
 
+            }
 
-            
+            //wanted to join this into one call but classes...
+            var kateMessage = kate.ToString();
+            Console.WriteLine(kateMessage);
+            var AllanMessage = Allan.ToString();
+            Console.WriteLine(AllanMessage);
+            var R2D2Message = R2D2.ToString();
+            Console.WriteLine(R2D2Message);
+            var JackieMessage = jackie.ToString();
+            Console.WriteLine(JackieMessage);
+            var C3POMessage = C3PO.ToString();
+            Console.WriteLine(C3POMessage);
 
-
-
-
-
-
-
-            
 
             Console.ReadLine();
         }
-
+        
 
 
     }

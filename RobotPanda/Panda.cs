@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace RobotPanda
 {
-    class Panda : Animal, ISayHello, IPet
+    class Panda : Animal, ISayHello
     {
-        public string Food { get; set; } = "Bamboo";
-
-
-        public void pet(string name)
-        {
-            Name = name;
-            OwnersName =
-        }
 
         public void SayHello()
         {
             Console.WriteLine("Ni hao!");
+        }
+
+        public override string ToString()
+        {
+            return $"Ni hao! I am {Name} and I'm a panda. My birthday is {Birthday} ";
         }
     }
 

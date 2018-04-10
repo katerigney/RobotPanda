@@ -8,6 +8,7 @@ namespace RobotPanda
 {
     class Being 
     {
+
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
 
@@ -15,6 +16,7 @@ namespace RobotPanda
 
         protected bool IsAsleep { get; set; } = true;
 
- 
+        public string Ownersname { get; set; }
+
     }
 }
