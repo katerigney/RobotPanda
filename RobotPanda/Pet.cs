@@ -8,6 +8,7 @@ namespace RobotPanda
 {
     interface IPet
     {
-        void pet();
+       // all pets have ownersName
+       string OwnersName { get; set; }
     }
 }

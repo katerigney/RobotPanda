@@ -80,8 +80,11 @@ namespace RobotPanda
             {
                 //Ownersname would not work with being as the list type. Could make Pets class but can't put two inheritances on a class???
                 Console.WriteLine($"{pet.Name} is {pet.Ownersname}'s new pet.");
-
             }
+
+            var mingming = (Panda)kate.AdoptPet(new Panda());
+            mingming.EatUp("bambooo");
+
 
             //wanted to join this into one call but classes...
             var kateMessage = kate.ToString();

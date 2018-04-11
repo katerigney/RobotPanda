@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace RobotPanda
 {
-    class Panda : Animal, ISayHello
+    class Panda : Animal, ISayHello, IPet
     {
+        public string OwnersName { get; set; }
 
         public void SayHello()
         {

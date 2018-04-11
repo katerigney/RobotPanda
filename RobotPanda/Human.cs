@@ -9,6 +9,17 @@ namespace RobotPanda
     class Human : Animal, ISayHello
     {
 
+        // need a way to associate IPet(s) to a user 
+        public List<IPet> Pets { get; set; } = new List<IPet>();
+
+
+        public IPet AdoptPet(IPet newPet)
+        {
+            newPet.OwnersName = this.Name;
+            this.Pets.Add(newPet);
+            return newPet;
+        }
+
         public Panda AdoptPanda(string name, string ownersName)
         {
             var newPanda = new Panda();
