@@ -83,7 +83,7 @@ namespace RobotPanda
             }
 
             var mingming = (Panda)kate.AdoptPet(new Panda());
-            mingming.EatUp("bambooo");
+            mingming.EatUp("MingMing");
 
 
             //wanted to join this into one call but classes...
